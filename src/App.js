@@ -1,25 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Route, NavLink, Switch } from 'react-router-dom';
+import Home from './Home';
+import styled from 'styled-components';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Menu = () => <h1>Menu</h1>
+const YourHealth = () => <h1>Your Health</h1>
+const AboutUs = () => <h1>About us</h1>
+const Calculate = () => <div>Calculation</div>
+
+const Navbar = styled.div`
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  color: white;
+  padding: 10px ;
+  align-items: center;
+  height: 28px;
+`;
+
+const Main = styled.div`
+  height: 100vh;
+  padding-top: 48px;
+  background-color: lightblue;
+`;
+
+const NavbarEnd = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding-right: 10px;
+`;
+
+const Navendmenu = styled.div`
+  background-color: red;
+  display: block;
+  padding: 15px 16px;
+  color: white;
+  
+`;
+
+class App extends Component {
+  render() {
+    return (
+      <div >
+        <nav>
+          <Navbar>
+            <div>Health Calculate</div>
+            <NavbarEnd>
+                <NavLink  exact to="/" ><Navendmenu>Home</Navendmenu></NavLink>
+                <NavLink to="/menu" ><Navendmenu>Menu</Navendmenu></NavLink>              
+                <NavLink to="/your_health" ><Navendmenu>Your Health</Navendmenu></NavLink>
+                <NavLink to="/about_us" ><Navendmenu>About Us</Navendmenu></NavLink>
+            </NavbarEnd>
+          </Navbar>
+        </nav>
+        <Main>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/menu" component={Menu} />
+          <Route path="/your_health" component={YourHealth} />
+          <Route path="/about_us" component={AboutUs} />
+          <Route path="/calculate" component={Calculate} />
+        </Switch>
+        </Main>
+      </div>
+    );
+  }
 }
 
 export default App;
