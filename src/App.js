@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Route, NavLink, Switch } from 'react-router-dom';
-import Home from './Home';
 import styled from 'styled-components';
+import Home from './Home';
+import Calculate from './Calculate';
 
 const Menu = () => <h1>Menu</h1>
 const YourHealth = () => <h1>Your Health</h1>
 const AboutUs = () => <h1>About us</h1>
-const Calculate = () => <div>Calculation</div>
 
 const Navbar = styled.div`
   background-color: #333;
