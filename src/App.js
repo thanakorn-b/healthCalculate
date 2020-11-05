@@ -3,10 +3,12 @@ import { Route, NavLink, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import Home from './Home';
 import Calculate from './Calculate';
+import Status from './Status';
 
 const Menu = () => <h1>Menu</h1>
 const YourHealth = () => <h1>Your Health</h1>
 const AboutUs = () => <h1>About us</h1>
+
 
 const Navbar = styled.div`
   background-color: #333;
@@ -62,6 +64,7 @@ class App extends Component {
           <Route path="/your_health" component={YourHealth} />
           <Route path="/about_us" component={AboutUs} />
           <Route path="/calculate" component={Calculate} />
+          <Route path="/status" component={Status} />
         </Switch>
         </Main>
       </div>

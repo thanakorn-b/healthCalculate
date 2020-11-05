@@ -53,7 +53,7 @@ const Calculate = () => {
                     <input type="number" required></input>
                 </div>
                 <Text></Text>
-                <NavLink to="/" ><Button>Next</Button></NavLink>
+                <NavLink to="/status" ><Button>Next</Button></NavLink>
             </Content>
         </Container>
     )
